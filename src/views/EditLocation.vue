@@ -43,7 +43,7 @@
     </form>
     <br />
     <br />
-    <button @click="GoBack()">Go back to location list </button>
+    <button @click="GoBack()">Go back to location </button>
   </div>
 </template>
 
@@ -95,7 +95,7 @@ export default {
       }
     },
     GoBack(){
-      this.$router.push(`/locations`);
+      this.$router.push(`/LocationDetails/${this.locationId}`);
     },
     async submitEditForm() {
       try {
