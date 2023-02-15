@@ -10,6 +10,13 @@
   </div>
   <br />
   <br />
+  <div v-if="this.role==='admin'">
+    <button @click="editLocation()">edit location</button>
+    <br />
+    <button @click="deleteLocation()">Delete</button>
+  </div>
+  <br />
+  <br />
   <div>
     <button @click="GoBack()">Go back to location list </button>
   </div>
@@ -18,11 +25,10 @@
 <script>
 //import axios from "axios";
 import {mapState} from "vuex";
-
+import axios from "axios";
 export default {
   data() {
     return {
-      //locationDetails : this.$store.state.locationDetails,
       currentPage: 1,
       itemsPerPage: 10,
     };
@@ -32,13 +38,31 @@ export default {
     ...mapState({
       locationDetails: (state) => state.locationDetails,
       locationId: (state) => state.locationId,
-      token: (state) => state.token
+      token: (state) => state.token,
+      role: (state) => state.role,
     }),
   },
   methods: {
     GoBack(){
       this.$router.push(`/locations`);
-    }
+    },
+    editLocation(){
+      this.$router.push(`/LocationDetails/EditLocation/${this.locationId}`);
+    },
+    async deleteLocation(){
+      try {
+        await axios.delete(`http://localhost:3000/locations/${this.locationId}`, {
+          headers: {
+            Authorization: `Bearer ${this.token}`,
+          }
+        });
+        alert('Location deleted !');
+        this.$router.push(`/locations`);
+      }
+      catch (error) {
+        alert('An error occurred, please try again later');
+      }
+    },
   },
 };
 </script>

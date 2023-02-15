@@ -23,7 +23,7 @@
       </table>
       <br />
       <br />
-      <div v-if="this.role=='admin'">
+      <div v-if="this.role==='admin'">
         <button @click="CreateLocation">Add Location </button>
       </div>
       <br />
@@ -83,6 +83,7 @@
     CreateLocation() {
       this.$router.push('/CreateLocation');
     },
+
   },
 }
 

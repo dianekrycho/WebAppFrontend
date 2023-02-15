@@ -8,6 +8,7 @@ import Show_Locations from "../views/Show-Locations.vue";
 import Get_LocationDetails from "../views/Get-LocationDetails.vue"
 import Show_LocationDetails from "../views/Show-LocationDetail.vue"
 import CreateLocation from "@/views/CreateLocation.vue";
+import EditLocation from "@/views/EditLocation.vue";
 
 const router = createRouter({
   history : createWebHistory(),
@@ -16,6 +17,11 @@ const router = createRouter({
       path: "/CreateLocation",
       name: "CreateLocation",
       component:CreateLocation,
+    },
+    {
+      path: "/LocationDetails/EditLocation/:Id",
+      name: "EditLocation",
+      component:EditLocation,
     },
     {
       path: "/",
