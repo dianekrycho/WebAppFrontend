@@ -6,7 +6,6 @@
 import axios from 'axios';
 import { mapState, mapActions } from 'vuex';
 export default {
-    
     computed: {
     ...mapState({
       locations: (state) => state.locations,

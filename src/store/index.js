@@ -22,7 +22,7 @@ const store = createStore({
     setLocationId(state,locationId){
       state.locationId = locationId
     },
-    setLocationsDetails(state,locationDetails){
+    setLocationDetails(state,locationDetails){
       state.locationDetails = locationDetails
     }
   },

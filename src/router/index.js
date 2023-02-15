@@ -3,10 +3,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Login from "../views/Login-view.vue";
 import Welcome from "../views/Welcome-view.vue";
 import Register from "../views/Register-view.vue";
-import Get_Locations from "../views/Get-Locations-view.vue";
-import Show_Locations from "../views/Show-Locations-view.vue";
-import LocationDetails from "../views/locationDetail.vue"
-
+import Get_Locations from "../views/Get-Locations.vue";
+import Show_Locations from "../views/Show-Locations.vue";
+import Get_LocationDetails from "../views/Get-LocationDetails.vue"
+import Show_LocationDetails from "../views/Show-LocationDetail.vue"
 
 
 const router = createRouter({
@@ -18,22 +18,29 @@ const router = createRouter({
       component: Welcome,
     },
     {
+      path: "/locations",
+      name: "Locations",
+      component: Get_Locations,
+    },
+    {
       path: "/Show-Locations",
       name: "Show-Locations",
       component: Show_Locations, 
     },
     {
       path: '/LocationDetails/:Id',
-      component: LocationDetails },
+      name: "Get-LocationDetails",
+      component: Get_LocationDetails,
+    },
+    {
+      path: '/Show-LocationDetails/:Id',
+      name: "Show-LocationDetails",
+      component: Show_LocationDetails,
+    },
     {
       path: "/login",
       name: "Login",
       component: Login,
-    },
-    {
-      path: "/locations",
-      name: "Locations",
-      component: Get_Locations,
     },
     {
       path: "/register",
