@@ -23,10 +23,11 @@ export default {
   computed: {
     ...mapState({
       token: (state) => state.token,
+      //role: (state) => state.role,
     }),
   },
   methods: {
-    ...mapActions(['setToken']),
+    ...mapActions(['setToken', 'setRole']),
     async login() {
       try {
         const response = await axios.post('http://localhost:3000/users/login', {
@@ -34,11 +35,26 @@ export default {
           password: this.password,
         });
         this.setToken(response.data.jwt);
+        this.setRole(response.data.role)
       } catch (error) {
         console.error(error);
       }
       this.$router.push("/");
     },
+    /*
+    async getRole(){
+      try {
+        const response = await axios.post('http://localhost:3000/users/me', {
+          headers: {
+            Authorization: `Bearer ${this.token}`,
+          }
+        });
+        this.setRole(response.data.role)
+      } catch (error) {
+        console.error(error);
+      }
+    }
+     */
     
   },
 

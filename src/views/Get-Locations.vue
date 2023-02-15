@@ -10,13 +10,15 @@ export default {
     ...mapState({
       locations: (state) => state.locations,
       token: (state) => state.token,
+      role: (state) => state.role,
     }),
   },
   mounted(){
         this.get_locations();
+        this.getRole();
     },
   methods: {
-    ...mapActions(['setLocations']),
+    ...mapActions(['setLocations', 'setRole']),
     async get_locations() {
       try {
         const response = await axios.get('http://localhost:3000/locations', {
@@ -31,6 +33,18 @@ export default {
       }
       this.$router.push("/Show-Locations");
     },
+    async getRole(){
+      try {
+        const response = await axios.get('http://localhost:3000/users/me', {
+          headers: {
+            Authorization: `Bearer ${this.token}`,
+          }
+        });
+        this.setRole(response.data.role)
+      } catch (error) {
+        console.error(error);
+      }
+    }
     
   },
 

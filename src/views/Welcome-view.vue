@@ -1,6 +1,7 @@
 <template>
   <div>
-    Bienvenue
+    <br />
+    Welcome ! This website gives you information about outside film shootings in Paris since 2016
     <br />
     <br />
     <router-link v-if="!isLoggedIn" to="/login"><button>Display film locations</button></router-link>

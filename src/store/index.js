@@ -3,6 +3,7 @@ import { createStore } from 'vuex'
 const store = createStore({
   state: {
     token: null,
+    role:null,
     locations: null,
     locationId:null,
     locationDetails: null,
@@ -11,10 +12,17 @@ const store = createStore({
     isLoggedIn(state) {
       return !!state.token;
     },
+    isAdmin(state){
+      if(state.role == 'admin'){ return true }
+      else { return false }
+    }
   },
   mutations: {
     setToken(state, token) {
       state.token = token;
+    },
+    setRole(state, role) {
+      state.role = role;
     },
     setLocations(state,locations){
       state.locations = locations
@@ -29,6 +37,9 @@ const store = createStore({
   actions: {
     setToken({ commit }, token) {
       commit('setToken', token);
+    },
+    setRole({ commit }, role) {
+      commit('setRole', role);
     },
     setLocations({ commit }, locations) {
       commit('setLocations', locations);

@@ -8,6 +8,11 @@
     <h4>District of the shoot: {{locationDetails.district}}</h4>
     <h4>Year of the shoot : {{locationDetails.year}}</h4>
   </div>
+  <br />
+  <br />
+  <div>
+    <button @click="GoBack()">Go back to location list </button>
+  </div>
 </template>
 
 <script>
@@ -17,7 +22,7 @@ import {mapState} from "vuex";
 export default {
   data() {
     return {
-      locationDetails : this.$store.state.locationDetails,
+      //locationDetails : this.$store.state.locationDetails,
       currentPage: 1,
       itemsPerPage: 10,
     };
@@ -31,7 +36,9 @@ export default {
     }),
   },
   methods: {
-
+    GoBack(){
+      this.$router.push(`/locations`);
+    }
   },
 };
 </script>
