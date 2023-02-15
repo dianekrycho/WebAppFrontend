@@ -13,6 +13,7 @@
   <div v-if="this.role==='admin'">
     <button @click="editLocation()">edit location</button>
     <br />
+    <br />
     <button @click="deleteLocation()">Delete</button>
   </div>
   <br />

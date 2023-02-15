@@ -8,7 +8,6 @@
       <table style="margin: 0 auto;">
         <thead>
           <tr>
-            {{this.role}}
             <th>Film shoot locations </th>
             <br />
             <br />

@@ -29,11 +29,15 @@ open a modal containing details, so that the website is useful
 ✅ USR4 : : As an “admin" user, I want to see a “Add Location” button in the location page, so
 that I can create a new location
 
-❌ USR5 : As an “admin" user, I want to see a button to edit locations in the array of locations,
+✅ USR5 : As an “admin" user, I want to see a button to edit locations in the array of locations,
 so that I can edit existing locations
+
+❗️the edit button is inside the see location details page
 
 ✅ USR6 : As an “admin" user, I want to see a button to delete locations in the array of
 locations so that I can delete existing locations
+
+❗️the delete button is inside the see location details page
 
 ### Backend modifications 
 inside the "controllerGetAllLocations()" change the limit to see more locations 
