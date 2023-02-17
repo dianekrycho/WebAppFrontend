@@ -18,7 +18,7 @@ export default {
   methods: {
     async register() {
       try {
-        await axios.post('http://localhost:3000/users/register', {
+        await axios.post('https://webapp-backend-do6m.onrender.com/users/register', {
           username: this.username,
           password: this.password,
         });

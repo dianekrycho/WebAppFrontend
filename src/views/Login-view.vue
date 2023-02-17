@@ -30,7 +30,7 @@ export default {
     ...mapActions(['setToken', 'setRole']),
     async login() {
       try {
-        const response = await axios.post('http://localhost:3000/users/login', {
+        const response = await axios.post('https://webapp-backend-do6m.onrender.com/users/login', {
           username: this.username,
           password: this.password,
         });

@@ -99,7 +99,7 @@ export default {
     },
     async submitEditForm() {
       try {
-        await axios.patch(`http://localhost:3000/locations/${this.locationId}`, {
+        await axios.patch(`https://webapp-backend-do6m.onrender.com/locations/${this.locationId}`, {
           filmName: this.filmName,
           filmType: this.filmType,
           filmDirectorName: this.filmDirectorName,

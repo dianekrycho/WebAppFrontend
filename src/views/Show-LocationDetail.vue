@@ -52,7 +52,7 @@ export default {
     },
     async deleteLocation(){
       try {
-        await axios.delete(`http://localhost:3000/locations/${this.locationId}`, {
+        await axios.delete(`https://webapp-backend-do6m.onrender.com/locations/${this.locationId}`, {
           headers: {
             Authorization: `Bearer ${this.token}`,
           }
